@@ -37,7 +37,7 @@ const Navbar = () => {
                     {navbarRoutes.map((x, index) => {
                         return (
                             <Link
-                                className=' text-small-regular bg-neutral-700 px-2 py-1 rounded-xl'
+                                className='hover:bg-neutral-500 text-small-regular bg-neutral-700 px-2 py-1 rounded-xl'
                                 key={index} href={`/Temporadas/${x.route}`}
                             >{x.label}</Link>
                         )

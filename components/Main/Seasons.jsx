@@ -32,9 +32,13 @@ const Seasons = () => {
                                         alt=""
                                     />
                                 </div>
-                                <p className=" text-center text-white text-body-semibold  p-4">
-                                    {x.label}
-                                </p>
+
+                                <div className='flex items-center gap-x-2 px-2 '>
+                                    <p className=' text-small-semibold bg-black px-2 py-1 '>{x.year}</p>
+                                    <p className="text-small-semibold  text-white p-4">
+                                        {x.label}
+                                    </p>
+                                </div>
                             </Link>
                         )
                     })}
