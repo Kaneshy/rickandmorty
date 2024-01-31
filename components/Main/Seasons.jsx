@@ -12,15 +12,19 @@ const Seasons = () => {
 
     const [isActive, setisActive] = useState(false)
     return (
-        <main className='flex flex-col p-6 justify-between'>
-            <p className='text-center p-6'>Rick and Morty</p>
+        <main className='flex select-none flex-col p-6 justify-between'>
+            <div className='items-center flex justify-center text-heading1-bold p-6'>
+                <img
+                    width={200}
+                    src={'https://res.cloudinary.com/dztz492su/image/upload/v1706741382/samples/a_gvphds.png'} />
+            </div>
             <section className='max-w-header'>
                 <div className='home-sv-a '>
                     {navbarRoutes.map((x, index) => {
                         return (
-                            <Link 
-                            key={index} href={`/Temporadas/${x.route}`} 
-                            className=' bg-cyan-700' >
+                            <Link
+                                key={index} href={`/Temporadas/${x.route}`}
+                                className=' bg-cyan-900' >
                                 <div className="flex max-h-44 overflow-hidden  bg-white ">
                                     <img
                                         className="w-full hover-filter-a object-fill "

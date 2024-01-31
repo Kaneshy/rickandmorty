@@ -1,6 +1,7 @@
 'use client'
+import MoreVideos from '@/components/Main/MoreVideos'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 
 const Capitulos = ({params}) => {
 
@@ -27,9 +28,13 @@ const Capitulos = ({params}) => {
                 </div>
 
             </div>
-            <div className='p-4 bg-neutral-900'>
-                <p>{episode.title}</p>
+            <div className='p-4 min-h-14 bg-neutral-900'>
+                <p className='text-body-bold'>{episode.title || 'Rick and morty'}</p>
             </div>
+            <Suspense fallback={<p>Loading</p>}>
+                <MoreVideos value={params.id}/>
+            </Suspense>
+
         </main>
 
     )

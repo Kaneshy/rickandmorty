@@ -20,28 +20,29 @@ const TemporadasPage = ({ params }) => {
 
   return (
     <main className='flex select-none flex-col p-6 justify-between'>
-      <h1 className='text-center p-6'>Rick and Morty</h1>
-      
-
       <section className=' max-w-header'>
-      <div className='px-4 flex '>
-        <p className='bg-neutral-800 py-1 px-2 rounded-xl'>TEMPORADA {params.id}</p>
-      </div>
+        <div className='px-4 flex '>
+          <p className='bg-neutral-800 py-1 px-2 rounded-xl'>TEMPORADA {params.id}</p>
+        </div>
         <div className='home-sv-a  '>
           {episodes.map((x, index) => {
             return (
               <Link className='shadow bg-cyan-700' key={x.id} href={`/capitulos/${x._id}`}>
                 <div className="flex overflow-hidden max-h-44  bg-white">
                   <img
-                    className="hover-filter-a w-full object-fill  "
+                    className="hover-filter-a w-full   object-fill  "
                     src={x.thumbnail}
                     alt=""
                   />
-                  
+
                 </div>
-                <p className="text-small-semibold  text-white p-4">
-                    Title: {x.title}
+                <div className='flex items-center gap-x-2 px-2 '>
+                  <p className=' text-small-semibold bg-cyan-950 px-2 py-1 rounded-xl'>{params.id}x{index+1}</p>
+                  <p className="text-small-semibold  text-white p-4">
+                    {x.title}
                   </p>
+                </div>
+
               </Link>
             )
           })}
